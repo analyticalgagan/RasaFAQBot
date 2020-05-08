@@ -1,0 +1,89 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- howareyou
+- mood_great
+- mood_unhappy
+- bot_challenge
+- faq
+- faq/claim_status
+- faq/claim_contact
+- faq/claim_howto
+- faq/claim_conditions
+- faq/claim_documents
+responses:
+  utter_greet:
+  - buttons:
+    - payload: Menu
+      title: Menu 📜
+    - payload: Contact Us
+      title: Contact Us 📞
+    - payload: Exit
+      title: Exit 👋
+    text: Hey there! My name is motor insurance claim bot and I can assist you with
+      your queries related to claims. How may i help you today ?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - buttons:
+    - payload: Yes
+      title: 👍
+    - payload: Not helped
+      title: 👎
+    text: Did that help?
+  utter_anything_else:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: Am Done
+    text: Is there anything else I can help you with ?
+  utter_happy:
+  - text: Great, carry on!
+  utter_ask_howdoing:
+  - text: I'm great! Thanks for asking. How about you ?
+  - text: I'm good, thanks! 🙌 How about you ?
+  - text: A little bit too warm, otherwise fine. How about you ?
+  - text: A little bit cold, otherwise fine. How about you ?
+  utter_goodbye:
+  - text: Thanks for contacting us. Talk to you again ! Bye 😊
+    image: https://cdn.pixabay.com/photo/2018/09/20/14/22/mercedes-190-sl-3690980_1280.jpg
+  utter_iamabot:
+  - buttons:
+    - payload: Documents required to raise a claim
+      title: Documents required to raise a claim
+    - payload: Customer Care Support Details
+      title: Customer Support Details
+    - payload: How to raise a claim
+      title: How to raise a claim
+    - payload: Status of a claim
+      title: Status of a claim
+    text: "I am a motor insurance claim bot, powered by Rasa \U0001F426\n You may\
+      \ ask me  few queries like :"
+  actions:
+  - text: respond_faq
+    utter_default:
+  - text: Sorry, I didn't get that 🤷. Could you please rephrase?
+  - text: I didn't understand, could you rephrase that?
+  - text: I'm sorry, but I didn't understand you. Could you please rephrase what you
+      just said?
+  - text: I'm afraid I didn't get what you just said. Could you rephrase that?
+  - text: I didn't quite get that, could you rephrase your message?
+  - text: Could you rephrase your message? I didn't get it, I'm sorry.
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- actions
+- respond_faq
+- utter_ask_howdoing
+- utter_anything_else
